@@ -1,0 +1,59 @@
+<div>
+	<h2>Overview</h2>
+	<div class="tab-header-stats">
+		<div class="tab-header-stat-item big-stat-block">
+			<span class="stat-content">{{name}}</span>
+			<span class="stat-label">Name</span>
+		</div>
+		<div class="tab-header-stat-item big-stat-block">
+			<span class="stat-content">{{status}}</span>
+			<span class="stat-label">Status</span>
+		</div>
+		<div class="tab-header-stat-item big-stat-block">
+			<span class="stat-content">{{servicesCount}}</span>
+			<span class="stat-label"># of Services</span>
+		</div>
+		<div class="tab-header-stat-item big-stat-block">
+			<span class="stat-content">{{datacenter}}</span>
+			<span class="stat-label">Datacenter</span>
+		</div>
+	</div>
+	<h2>Node Metadata</h2>
+	<table>
+		<thead>
+		<th>Key</th>
+		<th>Value</th>
+		</thead>
+		<tbody>
+			{{#each metadata}}
+				<tr>
+					<td>{{@key}}</td>
+					<td>{{this}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<h2>Serivces</h2>
+	<table>
+		<thead>
+		<th>Name</th>
+		<th>Service</th>
+		<th>Port</th>
+		</thead>
+		<tbody>
+			{{#each services}}
+				<tr>
+					<td>{{this.ID}}</td>
+					<td>{{this.Service}}</td>
+					<td>{{this.Port}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+<style>
+.big-stat-block {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+</style>
